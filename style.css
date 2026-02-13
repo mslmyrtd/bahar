@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff6b81, #f368e0);
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+  }
+  
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 16px;
+  }
+  
+  .card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* MESSAGE */
+  .message {
+    padding: 60px 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+  }
+  
+  /* SURPRISE */
+  .surprise {
+    padding: 60px 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  
+  .surprise.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #fff;
+    color: #f368e0;
+    font-weight: 600;
+  }
+  
+  .hidden {
+    display: none;
+    margin-top: 30px;
+  }
+  
+  .hidden h2 {
+    font-size: 2rem;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .message {
+      font-size: 1.3rem;
+    }
+  }
+  .photo-box {
+    display: none;
+    margin-top: 30px;
+    animation: fadeZoom 0.8s ease forwards;
+  }
+  
+  .photo-box img {
+    max-width: 260px;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin-bottom: 16px;
+  }
+  
+  .photo-box p {
+    font-size: 1.4rem;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  @keyframes fadeZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .stack {
+    position: relative;
+    width: 260px;
+    height: 360px;
+    margin: auto;
+  }
+  
+  .photo {
+    position: absolute;
+    inset: 0;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  
+  /* varsayılan konumlar */
+  .photo[data-index="0"] { z-index: 3; }
+  .photo[data-index="1"] { transform: translateX(-18px) scale(0.92); z-index: 2; }
+  .photo[data-index="2"] { transform: translateX(18px) scale(0.92); z-index: 1; }
+  
+  /* aktif olunca HER ŞEYİ EZ */
+  .photo.active {
+    transform: translateX(0) scale(1) !important;
+    filter: blur(0) !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+  }
+  
+  /* aktif olmayanlar */
+  .photo:not(.active) {
+    filter: blur(6px);
+    opacity: 0.55;
+  }
+  
+  /* foto */
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  }
+  
+  /* blur → net */
+  .photo.active img {
+    animation: focusIn 0.7s ease forwards;
+  }
+  
+  @keyframes focusIn {
+    from { filter: blur(10px); transform: scale(1.05); }
+    to { filter: blur(0); transform: scale(1); }
+  }
+
+
+
+  .funny-section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+
+  
+  /* 💬 Konuşma balonu */
+  .speech-bubble {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 280px;
+    background: white;
+    color: #333;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    display: none;
+    animation: popIn 0.4s ease;
+  }
+  
+  /* Balon kuyruğu */
+  .speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: 30px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+  }
+  
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: scale(0.85) translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  /* 📱 Mobil uyum */
+  @media (max-width: 600px) {
+    .speech-bubble {
+      right: 10px;
+      left: 10px;
+      max-width: unset;
+    }
+  
+    .speech-bubble::after {
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+  /* ❤️ FULLSCREEN KALP PATLAMASI */
+  #heartCanvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+  }
+  
+  /* 💖 SENİ SEVİYORUM YAZISI */
+  #loveText {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 1.8s ease;
+    text-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  }
+  
+  /* görünür hali */
+  #loveText.show {
+    opacity: 1;
+  }
+  #loveText.hide {
+    opacity: 0;
+  }
+  
+  /* 📱 Mobil */
+  @media (max-width: 600px) {
+    #loveText {
+      font-size: 2.6rem;
+      padding: 20px;
+      text-align: center;
+    }
+  }
