@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eksik Listesi 🏠</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="liste.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">❤️ Baharım</a>
+            <span class="sync-dot" id="syncDot" title="Bağlantı durumu"></span>
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="ask.html">Aşkımız 💕</a>
+                <a href="liste.html" class="active">Eksik Listesi 🏠</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="liste-main">
+        <h1 class="liste-title">Yuvamız Eksik Listesi</h1>
+        <p class="liste-subtitle">Birlikte tamamladıklarımız ❤️</p>
+
+        <div class="progress-wrapper">
+            <div class="progress-bg">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">0 / 0 tamamlandı</p>
+        </div>
+
+        <!-- YENİ ÜRÜN FORMU -->
+        <div class="add-form">
+            <h3 class="add-form-title">✏️ Yeni Ürün Ekle</h3>
+            <div class="add-row">
+                <input
+                    type="text"
+                    id="itemInput"
+                    class="add-input"
+                    placeholder="Ürün adı..."
+                    autocomplete="off"
+                >
+                <input
+                    type="text"
+                    id="catInput"
+                    class="add-input"
+                    placeholder="Kategori (mevcut veya yeni)..."
+                    list="catSuggestions"
+                    autocomplete="off"
+                >
+                <datalist id="catSuggestions"></datalist>
+                <button class="add-btn" id="addBtn">Ekle +</button>
+            </div>
+        </div>
+
+        <div class="categories" id="categories"></div>
+    </main>
+
+    <script src="liste.js"></script>
+</body>
+
+</html>

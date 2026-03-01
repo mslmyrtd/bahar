@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aşkımız 💕</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="romantic">
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">❤️ Baharım</a>
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="ask.html" class="active">Aşkımız 💕</a>
+                <a href="liste.html">Eksik Listesi 🏠</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1 data-aos="fade-down">İyi ki Varsın Baharım❤️</h1>
+        <p data-aos="fade-up">Hayatımın en güzel tesadüfü</p>
+    </section>
+
+    <!-- STORY -->
+    <section class="cards">
+        <div class="card" data-aos="fade-up">
+            <h3>💌 Nasıl Tanıştık</h3>
+            <p>Hayatımın yönünü değiştiren o an…</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>📍 İlk Buluşma</h3>
+            <p>Zamanın durduğunu hissettiğim gün</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="200" id="funnyTrigger">
+            <h3>😂 En Komik Anımız</h3>
+            <p>Gülmekten konuşamadığımız o an</p>
+        </div>
+    </section>
+
+    <!-- MESSAGE -->
+    <section class="message" data-aos="fade-up">
+        <p>
+            Seninle geçen her gün,
+            takvimden bir gün değil…
+            hayatımdan bir mucize ❤️
+        </p>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section class="letter-section" data-aos="fade-up">
+        <div class="envelope-wrapper">
+            <div class="envelope" id="envelope">
+                <div class="envelope-front">
+                    <span class="heart-seal">💌</span>
+                    <p>Baharım'a</p>
+                </div>
+            </div>
+            <div class="letter" id="letterContent">
+                <div class="letter-body">
+                    <p class="salutation">Sevgili Baharım,</p>
+                    <p>Hayatıma girdiğin günden bu yana her şey farklı. Sabahları gözlerimi açtığımda ilk düşündüğüm sensin, geceleri uyumadan önce son gülümsemem seninle.</p>
+                    <p>Seninle geçen her sıradan an, benim için en güzel anıya dönüşüyor. Beraber güldüğümüzde dünya daha hafif geliyor; yanımda olduğunda her şey daha anlamlı hissettiriyor.</p>
+                    <p>Kaç kelime kullansam yetmez ama yine de söylemek istiyorum: Seni seviyorum. Sadece bugün için değil, daha gelecek olan tüm güzel anlar için de.</p>
+                    <p class="closing">Sonsuza dek seninle,</p>
+                    <p class="signature">Müslüm ❤️</p>
+                </div>
+            </div>
+            <button class="letter-btn" id="letterBtn">Mektubu Aç 💌</button>
+        </div>
+    </section>
+
+    <section class="funny-section">
+        <div id="speechBubble" class="speech-bubble">
+            <p id="bubbleText"></p>
+        </div>
+    </section>
+
+    <canvas id="heartCanvas"></canvas>
+    <div id="loveText">Seni Seviyorum ❤️</div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="script.js"></script>
+</body>
+
+</html>

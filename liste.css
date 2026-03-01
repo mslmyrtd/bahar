@@ -1,0 +1,266 @@
+.liste-main {
+  padding: 100px 16px 60px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.liste-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.liste-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+/* SYNC NOKTA */
+.sync-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(255,255,255,0.3);
+  margin-left: 8px;
+  flex-shrink: 0;
+  transition: background 0.4s;
+}
+
+.sync-dot.connected {
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+  animation: syncPulse 2.5s ease-in-out infinite;
+}
+
+.sync-dot.disconnected {
+  background: #f87171;
+}
+
+@keyframes syncPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.25); }
+  50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0.08); }
+}
+
+/* PROGRESS */
+.progress-wrapper {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.progress-bg {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+/* ÜRÜN EKLEME FORMU */
+.add-form {
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 22px 24px;
+  margin-bottom: 28px;
+}
+
+.add-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: white;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.add-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.add-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.add-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.add-btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .add-row {
+    flex-direction: column;
+  }
+  .add-btn {
+    width: 100%;
+  }
+}
+
+/* KATEGORİLER */
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cat-section {
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cat-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.cat-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* LISTE */
+.item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 5px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ff6b81;
+  background: rgba(255, 107, 129, 0.15);
+}
+
+.item input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f368e0;
+}
+
+.item input[type="checkbox"]:checked ~ .checkmark {
+  background: white;
+  border-color: white;
+}
+
+.item input[type="checkbox"]:checked ~ .checkmark::after {
+  content: '✓';
+}
+
+.item-text {
+  color: white;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.item.done .item-text {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* MOBİL */
+@media (max-width: 600px) {
+  .liste-title {
+    font-size: 1.8rem;
+  }
+
+  .cat-section {
+    padding: 18px 16px;
+  }
+}

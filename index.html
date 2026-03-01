@@ -4,92 +4,83 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sevgililer Günümüz ❤️</title>
+    <title>Baharım ❤️</title>
 
-    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet">
-
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1 data-aos="fade-down">İyi ki Varsın Baharım❤️</h1>
-        <p data-aos="fade-up">Hayatımın en güzel tesadüfü</p>
-    </section>
-
-    <!-- STORY -->
-    <section class="cards">
-        <div class="card" data-aos="fade-up">
-            <h3>💌 Nasıl Tanıştık</h3>
-            <p>Hayatımın yönünü değiştiren o an…</p>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">❤️ Baharım</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Ana Sayfa</a>
+                <a href="ask.html">Aşkımız 💕</a>
+                <a href="liste.html">Eksik Listesi 🏠</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <h3>📍 İlk Buluşma</h3>
-            <p>Zamanın durduğunu hissettiğim gün</p>
-        </div>
+    <main class="home-main">
 
-        <div class="card" data-aos="fade-up" data-aos-delay="200" id="funnyTrigger">
-            <h3>😂 En Komik Anımız</h3>
-            <p>Gülmekten konuşamadığımız o an</p>
-        </div>
-    </section>
-
-    <!-- MESSAGE -->
-    <section class="message" data-aos="fade-up">
-        <p>
-            Seninle geçen her gün,
-            takvimden bir gün değil…
-            hayatımdan bir mucize ❤️
-        </p>
-    </section>
-
-    <!-- SURPRISE -->
-    <section class="surprise" id="surpriseSection">
-        <button id="surpriseBtn">Buna basma 🙈</button>
-        <div id="hiddenMessage" class="hidden photo-stack">
-
-            <div class="stack">
-                <div class="photo active" data-index="0">
-                    <img src="images/photo1.jpg">
+        <!-- BİRLİKTELİK SAYACI -->
+        <section class="counter-section">
+            <h2 class="counter-title">Beraber Geçirdiğimiz Zaman</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span id="days">000</span>
+                    <label>Gün</label>
                 </div>
-                <div class="photo" data-index="1">
-                    <img src="images/photo2.jpg">
+                <div class="counter-item">
+                    <span id="hours">00</span>
+                    <label>Saat</label>
                 </div>
-                <div class="photo" data-index="2">
-                    <img src="images/photo3.jpg">
+                <div class="counter-item">
+                    <span id="minutes">00</span>
+                    <label>Dakika</label>
+                </div>
+                <div class="counter-item">
+                    <span id="seconds">00</span>
+                    <label>Saniye</label>
                 </div>
             </div>
+            <p class="counter-subtitle">26 Ekim 2025'ten beri ❤️</p>
+        </section>
 
-            <div class="date">
-                <p>❤️ 14 Şubat 2026</p>
+        <div class="counters-divider">💍</div>
+
+        <!-- DÜĞÜN GERİ SAYIMI -->
+        <section class="counter-section wedding-section">
+            <h2 class="counter-title wedding-title">Düğünümüze Kalan</h2>
+            <div class="counter-grid">
+                <div class="counter-item wedding-item">
+                    <span id="w-days">000</span>
+                    <label>Gün</label>
+                </div>
+                <div class="counter-item wedding-item">
+                    <span id="w-hours">00</span>
+                    <label>Saat</label>
+                </div>
+                <div class="counter-item wedding-item">
+                    <span id="w-minutes">00</span>
+                    <label>Dakika</label>
+                </div>
+                <div class="counter-item wedding-item">
+                    <span id="w-seconds">00</span>
+                    <label>Saniye</label>
+                </div>
             </div>
+            <p class="counter-subtitle">22 Ağustos 2026 💍</p>
+        </section>
 
-        </div>
-    </section>
-    <section class="funny-section">
-        <div id="speechBubble" class="speech-bubble">
-            <p id="bubbleText"></p>
-        </div>
-    </section>
-    <canvas id="heartCanvas"></canvas>
-    <div id="loveText">Seni Seviyorum ❤️</div>
+    </main>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
-    <script src="script.js"></script>
+    <script src="counter.js"></script>
 </body>
 
 </html>
